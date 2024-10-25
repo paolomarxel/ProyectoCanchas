@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+    <link rel="stylesheet" href="../css/miPerfil.css"> <!-- Enlace a tu CSS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery -->
+</head>
+<body>
+<h1>Mi Perfil</h1>
+<div id="perfil">
+    <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+    <p><strong>Apellido Paterno:</strong> <span id="apellidoPaterno"></span></p>
+    <p><strong>Apellido Materno:</strong> <span id="apellidoMaterno"></span></p>
+    <p><strong>Número de Identidad:</strong> <span id="nroIdentidad"></span></p>
+    <p><strong>Teléfono:</strong> <span id="telefono"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Fecha de Nacimiento:</strong> <span id="fechaNacimiento"></span></p>
+    <p><strong>Rol:</strong> <span id="rol"></span></p>
+</div>
+
+<script>
+    $(document).ready(function() {
+        // Realiza la solicitud al servlet para obtener los datos del perfil
+        $.ajax({
+            url: '/miPerfil', // Ruta del servlet
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                // Llena los campos del perfil con la respuesta del servidor
+                $('#nombre').text(data.nombre);
+                $('#apellidoPaterno').text(data.apellidoPaterno);
+                $('#apellidoMaterno').text(data.apellidoMaterno);
+                $('#nroIdentidad').text(data.nroIdentidad);
+                $('#telefono').text(data.telefono);
+                $('#email').text(data.email);
+                $('#fechaNacimiento').text(data.fechaNacimiento);
+                $('#rol').text(data.rol);
+            },
+            error: function(xhr) {
+                // Manejo de errores
+                if (xhr.status === 401) {
+                    alert('No se ha iniciado sesión.'); // Mensaje de error si no hay sesión
+                } else {
+                    alert('Error al cargar el perfil: ' + xhr.responseText);
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

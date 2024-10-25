@@ -1,0 +1,69 @@
+body {
+    font-family: 'Arial', sans-serif; /* Fuente de la página */
+    background-color: #e9ecef; /* Color de fondo suave */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #343a40; /* Color del encabezado */
+    text-align: center; /* Centrar el encabezado */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+#perfil {
+    background-color: #fff; /* Fondo blanco para el contenedor del perfil */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más profunda */
+    max-width: 600px; /* Ancho máximo del perfil */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    padding: 30px; /* Espaciado interno */
+    transition: transform 0.2s; /* Transición suave para el efecto hover */
+}
+
+#perfil:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+#perfil p {
+    font-size: 18px; /* Tamaño de fuente para los párrafos */
+    color: #495057; /* Color del texto */
+    margin: 15px 0; /* Espaciado entre párrafos */
+}
+
+strong {
+    color: #007bff; /* Color para el texto en negrita */
+}
+
+span {
+    color: #495057; /* Color del texto de los datos */
+    font-weight: normal; /* Peso de la fuente normal */
+}
+
+/* Estilo para el mensaje de error */
+.error-message {
+    color: #dc3545; /* Color rojo para los mensajes de error */
+    font-size: 16px; /* Tamaño de fuente para mensajes de error */
+    text-align: center; /* Centrar el mensaje de error */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+/* Estilo para el botón */
+button {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    transition: background-color 0.3s; /* Transición para el color de fondo */
+}
+
+button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+button:focus {
+    outline: none; /* Sin contorno al hacer clic */
+}
